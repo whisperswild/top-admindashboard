@@ -1,0 +1,52 @@
+/* 3 cols 4 rows */
+
+.{
+    margin: 0;
+    padding 0;
+
+}
+
+.body{
+
+
+}
+
+.container{
+    display: grid;
+
+    grid-template-areas: 
+    "sidebar header header"
+    "sidebar content announcements"
+    "sidebar content trending"
+    "footer footer footer";
+}
+
+.header{
+    grid-area: header;
+
+}
+
+.sidebar{
+    grid-area: sidebar;
+
+}
+
+.content{
+    grid-area: content;
+
+}
+
+.announcements{
+    grid-area: announcements;
+
+}
+
+.trending{
+    grid-area: trending;
+
+}
+
+.footer{
+    grid-area: footer;
+
+}
