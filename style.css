@@ -1,52 +1,158 @@
-/* 3 cols 4 rows */
+:root {
+    --sand: #f8be6d;
+    --lightsand: #fdd8b5;
+    --offwhite: #f6e3d4;
+    --lightblue: #bbdbf7;
+    --midblue: #92c4ee;
+    --darkblue: #64abe3;
+}
 
-.{
+* {
     margin: 0;
-    padding 0;
+    padding: 0;
 
 }
 
-.body{
+body {
+    background-color: var(--offwhite);
+    overflow: auto;
+}
 
+input {
 
 }
 
-.container{
+button {
+
+}
+
+.container {  
+    width: calc(100vw - (100vw - 100%));
+    height: calc(100vh - (100vh - 100%));
+
     display: grid;
-
+    grid-template-rows: auto;
+    grid-template-columns: 200px 3fr 1fr;
     grid-template-areas: 
-    "sidebar header header"
-    "sidebar content announcements"
-    "sidebar content trending"
-    "footer footer footer";
+    "sidebar header header header"
+    "sidebar content announcements ."
+    "sidebar content trending .";
+
+    gap: 20px;
 }
 
-.header{
+.header {
+    height: 150px;
+    background-color: var(--midblue);
     grid-area: header;
 
+    display: grid;
+    grid-template-areas: 
+    "search profile"
+    "welcome share";
+
 }
 
-.sidebar{
+.header-search {
+    grid-area: search;
+}
+
+.header-profile {
+    grid-area: profile;
+}
+
+.header-welcome {
+    grid-area: welcome;
+}
+
+.header-share {
+    grid-area: share;
+}
+
+
+
+
+
+.sidebar {
+    padding: 15px;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--darkblue);
     grid-area: sidebar;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
 }
 
-.content{
+.sidebar-links {
+
+
+}
+
+.content {
+
     grid-area: content;
 
+
 }
 
-.announcements{
+.content-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    gap: 5%;
+    height: 100%;
+
+
+}
+
+.card {
+    background-color: var(--lightblue);
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: -10px 0 0 0 var(--sand), 0 5px 10px 0 darkgray;
+    place-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+
+}
+
+.announcements{ 
     grid-area: announcements;
+    justify-self: end;
+}
+
+.announcement-content{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.announcement-link {
+    width: 80%;
 
 }
 
-.trending{
+.trending {
+
     grid-area: trending;
 
 }
 
-.footer{
-    grid-area: footer;
+.trending-content {
+    background-color: teal;
+}
+
+.trending-link {
 
 }
+ 
